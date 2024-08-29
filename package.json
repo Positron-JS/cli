@@ -1,0 +1,23 @@
+{
+  "name": "@positron-js/cli",
+  "version": "1.0.1",
+  "description": "Generate Code to create MAUI based Web View App",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "postversion": "git push --follow-tags"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@neurospeech/jex": "^1.0.103",
+    "cheerio": "^1.0.0",
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@types/prompts": "^2.4.9"
+  }
+}

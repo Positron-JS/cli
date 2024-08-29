@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-ios;net8.0-android34.0;</TargetFrameworks>
+		<!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net7.0-windows10.0.19041</TargetFrameworks> -->
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>PositronApp</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>Dot Web App</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.dot-web-shell.app</ApplicationId>
+		<ApplicationIdGuid>9a90889c-f6bb-4a86-af88-208b55c8e17c</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<UseMauiEssentials>true</UseMauiEssentials>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">16.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">11</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">7.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">7.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">8.0</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
+		<RunAOTCompilation>False</RunAOTCompilation>
+		<PublishTrimmed>False</PublishTrimmed>
+	</PropertyGroup>
+
+		<!-- For iOS publish-->
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+	  	<UseInterpreter>true</UseInterpreter>  
+		<MTouchInterpreter>all</MTouchInterpreter>  
+		<MtouchLink>None</MtouchLink>
+		<EnableSGenConc>true</EnableSGenConc>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Registrar>static</Registrar>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.4"/>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80"/>
+		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.80"/>
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.80" />
+	  	<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2"/>
+	  	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
+	
+		<!-- <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.0.1.4" /> -->
+		<PackageReference Include="Xamarin.AndroidX.Collection" Version="1.4.2" />
+		<PackageReference Include="Xamarin.AndroidX.Collection.Ktx" Version="1.4.2" />
+
+		<PackageReference Include="Xamarin.AndroidX.Activity" Version="1.9.1" />
+		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.9.1" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.2" />
+			
+		<!-- <GoogleServicesJson Include="config\google-services.json" /> -->
+	</ItemGroup>
+
+	<ItemGroup>
+	  	<EmbeddedResource Include="appsettings.json" />
+	</ItemGroup>
+
+
+</Project>

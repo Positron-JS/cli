@@ -1,2 +1,3 @@
-# cli
-Command Line Interface to create and publish Positron App
+# CLI Interface for Positron-JS
+
+Please read https://github.com/Positron-JS/positron-web-view on how to use.
