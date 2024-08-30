@@ -1,4 +1,4 @@
-﻿using Positron.Pages;
+﻿using NeuroSpeech.Positron.Pages;
 using Microsoft.Extensions.Configuration;
 
 namespace PositronApp;

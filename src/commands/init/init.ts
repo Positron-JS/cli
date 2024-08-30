@@ -14,7 +14,7 @@ cli
         const pkg = await cwd.readJson("package.json");
         pkg.dependencies ??= {};
         pkg.devDependencies ??= {};
-        pkg.devDependencies["@dot-web-shell/cli"] = "^" + AppInfo.version;
+        pkg.devDependencies["@positron-js/cli"] = "^" + AppInfo.version;
         pkg.dependencies["@neurospeech/jex"] = AppInfo.dependencies["@neurospeech/jex"];
         pkg.scripts ??= {};
         pkg.scripts.postversion = "git push --follow-tags";

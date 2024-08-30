@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using CommunityToolkit.Maui;
-using NativeShell;
+using NeuroSpeech.Positron;
 using System.Reflection;
 namespace PositronApp;
 
