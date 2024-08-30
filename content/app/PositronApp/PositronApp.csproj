@@ -52,7 +52,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.4"/>
+		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.14"/>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80"/>
 		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.80"/>
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.80" />

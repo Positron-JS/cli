@@ -2,7 +2,7 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using NativeShell;
+using NeuroSpeech.Positron;
 
 namespace PositronApp;
 
@@ -50,7 +50,7 @@ namespace PositronApp;
     MainLauncher = true,
     Exported = true,
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
-public class MainActivity : NativeShellMainActivity
+public class MainActivity : PositronMainActivity
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {
