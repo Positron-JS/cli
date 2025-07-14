@@ -82,7 +82,7 @@ for (const config of configs) {
             timeout={600000}
             logData={true}
             args={["publish",
-                "-f", "net8.0-ios",
+                "-f", "net9.0-ios",
                 "-c", "Release",            
                 "/p:BuildIpa=true",
                 "/p:RuntimeIdentifier=ios-arm64",

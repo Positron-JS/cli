@@ -8,7 +8,7 @@ export default [
 
         url: "https://....",
 
-        targetFramework: "net8.0-android34.0",
+        targetFramework: "net9.0-android35.0",
 
         androidSdkRoot: readEnv("ANDROID_SDK_ROOT"),
         javaHome: readEnv("JAVA_HOME_21_X64", readEnv("JAVA_HOME")),
