@@ -12,7 +12,6 @@
         "skipLibCheck": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "jsxFactory": "XNode.create",
         "lib": [
             "ES2018",
             "ES2021.WeakRef",
