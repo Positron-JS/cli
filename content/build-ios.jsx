@@ -4,10 +4,7 @@ import { AppleDev } from "@neurospeech/jex/dist/ci/mac/AppleDev.js";
 import { Build } from "@neurospeech/jex/dist/ci/build/Build.js";
 import { XCRun } from "@neurospeech/jex/dist/ci/mac/XCRun.js";
 import assert from "assert";
-import { fileURLToPath } from "url";
-import { join } from "path";
-
-const positronAppDir = fileURLToPath(import.meta.resolve("./app/PositronApp"));
+import { Common } from "./common.jsx";
 
 const { default: configs } = await import("../build-ios.config.js");
 
@@ -34,30 +31,7 @@ for (const config of configs) {
         </Batch>}
         >
 
-        <FileSystem.RemoveDir
-            path="./build"
-            force={true}
-            recursive={true}
-            />
-
-        <FileSystem.Mkdir
-            path="./build"
-            />
-
-        <FileSystem.CopyFile
-            src="./res/app-icon-background.svg"
-            dest={join(positronAppDir, "Resources/AppIcon/appicon.droid.svg")}
-            />
-
-        <FileSystem.CopyFile
-            src="./res/app-icon-foreground.droid.svg"
-            dest={join(positronAppDir, "Resources/AppIcon/appiconfg.droid.svg")}
-            />
-
-        <FileSystem.CopyFile
-            src="./res/app-icon-foreground.ios.svg"
-            dest={join(positronAppDir, "Resources/AppIcon/appiconfg.ios.svg")}
-            />            
+        <Common.PreBuild/>
 
         <FileSystem.MergeJson
             json={({
