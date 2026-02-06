@@ -35,7 +35,7 @@ export default class LocalFile {
     }
 
     writeFile(content: Buffer | string, encoding?: BufferEncoding) {
-        return writeFile(this.path, content, encoding);
+        return writeFile(this.path, content as any, encoding);
     }
 
     readFile(): Promise<Buffer>;
