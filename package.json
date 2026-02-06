@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push --follow-tags",
+    "push": "git add -A && git commit -m \"dep vb\" && npm version patch"
   },
   "author": "",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/positron-js/cli"
+    "url": "https://github.com/Positron-JS/cli"
   },
   "dependencies": {
     "@neurospeech/jex": "^1.0.142",
