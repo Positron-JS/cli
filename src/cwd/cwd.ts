@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from "fs";
-import { copyFile, mkdir, readdir, readFile, writeFile } from "fs/promises";
+import { copyFile, readdir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
 import LocalFile from "../core/LocalFile.js";
 

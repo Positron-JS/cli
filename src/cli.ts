@@ -153,7 +153,7 @@ export class CLI {
 
         try {
 
-            const [program, script, command, ... options] = argv;
+            const [_program, _script, command, ... options] = argv;
 
             if (/^help$/i.test(command)) {
                 if (options.length) {

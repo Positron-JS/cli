@@ -1,6 +1,6 @@
 import { cwd } from "../../cwd/cwd.js";
 import { cli } from "../../cli.js";
-import { AppInfo, packageContentFile, packagePath } from "../../AppInfo.js";
+import { AppInfo, packagePath } from "../../AppInfo.js";
 import { spawnSync } from "child_process";
 import { join, resolve } from "path";
 

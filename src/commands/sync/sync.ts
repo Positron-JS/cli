@@ -2,8 +2,8 @@ import { join } from "path";
 import { AppInfo, packagePath } from "../../AppInfo.js";
 import { cli } from "../../cli.js";
 import { cwd } from "../../cwd/cwd.js";
-import { copyFile, readFile, writeFile } from "fs/promises";
-import { spawn, spawnSync } from "child_process";
+import { copyFile } from "fs/promises";
+import { spawnSync } from "child_process";
 import * as cheerio from "cheerio";
 
 cli
