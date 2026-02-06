@@ -1,3 +1,11 @@
-# CLI Interface for Positron-JS
+# Installation
 
-Please read https://github.com/Positron-JS/positron-web-view on how to use.
+## init
+```
+npx @positron-js/cli init
+```
+
+## build
+```
+npx @neurospeech/jex /node_modules/@positron-js/cli/content/build-android.jsx
+```
