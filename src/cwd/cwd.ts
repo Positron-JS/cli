@@ -54,7 +54,7 @@ export const cwd = {
         return process.cwd();
     },
 
-    createTextFileIfNotExists(file, data: string | Buffer) {
+    createTextFileIfNotExists(file, data) {
         const path = join(this.path, file);
         if (existsSync(path)) {
             return;

@@ -131,3 +131,4 @@ dist
 /content/app/PositronApp/obj/
 /content/app/.vs/
 *.user
+tests/android/maui/

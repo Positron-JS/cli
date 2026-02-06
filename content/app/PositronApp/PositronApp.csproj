@@ -61,21 +61,21 @@
 	  	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.2" />
 	</ItemGroup>
 
+	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
+		<MauiIcon
+			Include="Resources\AppIcon\appicon.svg"
+			ForegroundFile="Resources\AppIcon\appicon.ios.svg"
+			Color="$(MAUI_ICON_IOS_COLOR)"
+			/>
+	</ItemGroup>
+	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
+		<MauiIcon
+			Include="Resources\AppIcon\appicon.svg"
+			ForegroundFile="Resources\AppIcon\appicon.droid.svg"
+			Color="$(MAUI_ICON_DROID_COLOR)" />
+	</ItemGroup>
+	
 	<ItemGroup>
-		<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
-			<MauiIcon
-				Include="Resources\AppIcon\appicon.svg"
-				ForegroundFile="Resources\AppIcon\appicon.ios.svg"
-				Color="$(MAUI_ICON_IOS_COLOR)"
-				/>
-		</ItemGroup>
-		<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
-			<MauiIcon
-				Include="Resources\AppIcon\appicon.svg"
-				ForegroundFile="Resources\AppIcon\appicon.droid.svg"
-				Color="$(MAUI_ICON_DROID_COLOR)" />
-		</ItemGroup>
-		
 		
 		<!-- Splash Screen -->
 		<MauiSplashScreen

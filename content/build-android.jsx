@@ -4,11 +4,14 @@ import { PlayStore } from "@neurospeech/jex/dist/ci/android/PlayStore.js";
 import { Build } from "@neurospeech/jex/dist/ci/build/Build.js";
 import assert from "assert";
 import { Common } from "./common.jsx";
+import { pathToFileURL } from "url";
+import { resolve } from "path";
 
-import configs from "../build-android.config.js";
 
 let applicationDisplayVersion;
 let applicationVersion;
+
+const { default: configs } = await import( pathToFileURL( resolve("./build-android.config.js")));
 
 for(const config of configs) {
 
@@ -29,7 +32,7 @@ for(const config of configs) {
             then={(x) => (applicationDisplayVersion = `${x.major}.${x.minor}`, applicationVersion = x.build)}
             />
 
-        <Common.PreBuild positronAppDir={positronAppDir} />
+        <Common.PreBuild />
 
         <FileSystem.MergeJson
             json={({

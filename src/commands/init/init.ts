@@ -2,7 +2,7 @@ import { cwd } from "../../cwd/cwd.js";
 import { cli } from "../../cli.js";
 import { AppInfo, packageContentFile, packagePath } from "../../AppInfo.js";
 import { spawnSync } from "child_process";
-import { join } from "path";
+import { join, resolve } from "path";
 
 
 cli
@@ -24,17 +24,9 @@ cli
         // run npm install....
         spawnSync("npm", ["install"]);
 
-        const contentAppFolder = join(packagePath, "content", "app");
+        const templateFolder = join(packagePath, "template");
 
-        if (!cwd.exists("maui")) {
 
-            await cwd.copyFolder(contentAppFolder, "maui", {});
+        await cwd.copyFolder(templateFolder, resolve("."), {});
 
-        }
-
-        await cwd.createTextFileIfNotExists("build-android.config.js", await packageContentFile("build-android.config.js").readFile())
-        await cwd.createTextFileIfNotExists("build-ios.config.js", await packageContentFile("build-ios.config.js").readFile())
-
-        await packageContentFile("build-android.jsx").copyTo("build-android.jsx");
-        await packageContentFile("build-ios.jsx").copyTo("build-ios.jsx");
     });

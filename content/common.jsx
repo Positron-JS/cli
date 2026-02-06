@@ -1,9 +1,7 @@
 import { Batch, Run } from "@neurospeech/jex/index.js";
 import { FileSystem } from "@neurospeech/jex/dist/utils/FileSystem.js";
-import { Batch } from "@neurospeech/jex";
 import { fileURLToPath } from "url";
-import { readFile } from "fs/promises";
-import { writeFile } from "fs";
+import { readFile, writeFile } from "fs/promises";
 
 const positronAppDir = fileURLToPath(import.meta.resolve("./app"));
 
@@ -35,8 +33,6 @@ export const Common = {
                 path="./maui"
                 />
 
-            <Run cmd="cd" args={["./maui"]} />
-
             <FileSystem.CopyFolder
                 src={positronAppDir}
                 dest="./maui"
@@ -45,30 +41,35 @@ export const Common = {
             <FileSystem.CopyFile
                 src="./res/app-icon-background.svg"
                 dest="./maui/PositronApp/Resources/AppIcon/appicon.svg"
+                overwrite={true}
                 />
     
             <FileSystem.CopyFile
                 src="./res/app-icon.droid.svg"
                 dest="./maui/PositronApp/Resources/AppIcon/appicon.droid.svg"
+                overwrite={true}
                 />
 
             <FileSystem.CopyFile
                 src="./res/app-icon.ios.svg"
                 dest="./maui/PositronApp/Resources/AppIcon/appicon.ios.svg"
+                overwrite={true}
                 />
 
             <FileSystem.CopyFile
-                src="./res/spalsh.svg"
+                src="./res/splash.svg"
                 dest="./maui/PositronApp/Resources/Splash/splash.svg"
+                overwrite={true}
                 />
 
             <FileSystem.CopyFile
                 src="./config/google-services.json"
-                dest="./maui/PositronApp/conifg/google-services.json"
+                dest="./maui/PositronApp/config/google-services.json"
+                overwrite={true}
                 />
 
             <ReplaceText
-                filePath="./maui/PositronApp/Positron.csproj"
+                filePath="./maui/PositronApp/PositronApp.csproj"
                 replace={(text) => {
                     text = text.replaceAll("$(MAUI_ICON_IOS_COLOR)", MAUI_ICON_IOS_COLOR);
                     text = text.replaceAll("$(MAUI_ICON_DROID_COLOR)", MAUI_ICON_DROID_COLOR);
