@@ -32,6 +32,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">8.0</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<MSBuildWarningsAsMessages>XA4214</MSBuildWarningsAsMessages>
+	</PropertyGroup>	
+
 	<PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
 		<RunAOTCompilation>False</RunAOTCompilation>
 		<PublishTrimmed>False</PublishTrimmed>

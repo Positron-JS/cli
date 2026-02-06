@@ -129,6 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 /content/app/PositronApp/obj/
+/content/app/PositronApp/bin/
 /content/app/.vs/
 *.user
 tests/android/maui/

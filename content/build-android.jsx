@@ -77,6 +77,8 @@ for(const config of configs) {
                 mask `/p:AndroidSigningKeyPass=${config.androidKeyStorePassword}`,
                 config.androidSdkRoot ? `/p:AndroidSdkPath=${config.androidSdkRoot}` : void 0,
                 config.javaHome ? `/p:JavaSdkDirectory=${config.javaHome}`: void 0,
+                "/warnasmessage:XA4214",
+                "/warnasmessage:XA4215",
                 "./maui/PositronApp/PositronApp.csproj"]}
             />
 
