@@ -7,14 +7,23 @@ import { writeFile } from "fs";
 
 const positronAppDir = fileURLToPath(import.meta.resolve("./app"));
 
-const ReplaceText = async ({ filePath, test, replace }) => {
+/**
+ * 
+ * @param {{ filePath: string, replace: (text: string) => string }} p 
+ */
+const ReplaceText = async ({ filePath, replace }) => {
     let text = await readFile(filePath, "utf-8");
-    text = text.replaceAll(test, replace);
+    text = replace(text);
     await writeFile(filePath, text);
 }; 
 
 export const Common = {
-    PreBuild({ }) {
+    PreBuild({ env: {
+        MAUI_ICON_IOS_COLOR = "#FFFFFF",
+        MAUI_ICON_DROID_COLOR = "#FFFFFF",
+        MAUI_SPLASH_SCREEN_COLOR = "#FFFFFF",
+        MAUI_SPLASH_BASE_SIZE="128,128"
+    } = {} }) {
         return <Batch>
             <FileSystem.RemoveDir
                 path="./maui"
@@ -60,7 +69,13 @@ export const Common = {
 
             <ReplaceText
                 filePath="./maui/PositronApp/Positron.csproj"
-                test=
+                replace={(text) => {
+                    text = text.replaceAll("$(MAUI_ICON_IOS_COLOR)", MAUI_ICON_IOS_COLOR);
+                    text = text.replaceAll("$(MAUI_ICON_DROID_COLOR)", MAUI_ICON_DROID_COLOR);
+                    text = text.replaceAll("$(MAUI_SPLASH_SCREEN_COLOR)", MAUI_SPLASH_SCREEN_COLOR);
+                    text = text.replaceAll("$(MAUI_SPLASH_BASE_SIZE)", MAUI_SPLASH_BASE_SIZE);
+                    return text;
+                }}
                 />
 
         </Batch>; 
