@@ -56,7 +56,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.33" />
+		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.41" />
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="4.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.31" />
 		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="10.0.31" />
@@ -66,26 +66,16 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
-		<MauiIcon
-			Include="Resources\AppIcon\appicon.svg"
-			ForegroundFile="Resources\AppIcon\appicon.ios.svg"
-			Color="$(MAUI_ICON_IOS_COLOR)"
-			/>
+		<MauiIcon Include="Resources\AppIcon\app_icon_background.svg" ForegroundFile="Resources\AppIcon\app_icon.ios.svg" Color="$(MAUI_ICON_IOS_COLOR)" />
 	</ItemGroup>
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
-		<MauiIcon
-			Include="Resources\AppIcon\appicon.svg"
-			ForegroundFile="Resources\AppIcon\appicon.droid.svg"
-			Color="$(MAUI_ICON_DROID_COLOR)" />
+		<MauiIcon Include="Resources\AppIcon\app_icon_background.svg" ForegroundFile="Resources\AppIcon\app_icon.droid.svg" Color="$(MAUI_ICON_DROID_COLOR)" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		
 		<!-- Splash Screen -->
-		<MauiSplashScreen
-			Include="Resources\Splash\splash.svg"
-			Color="$(MAUI_SPLASH_SCREEN_COLOR)"
-			BaseSize="$(MAUI_SPLASH_BASE_SIZE)" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="$(MAUI_SPLASH_SCREEN_COLOR)" BaseSize="$(MAUI_SPLASH_BASE_SIZE)" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />		
