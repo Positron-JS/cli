@@ -34,6 +34,7 @@
 
 	<PropertyGroup>
 		<MSBuildWarningsAsMessages>XA4214</MSBuildWarningsAsMessages>
+		<MSBuildWarningsAsMessages>XA4215</MSBuildWarningsAsMessages>
 	</PropertyGroup>	
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
@@ -56,7 +57,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.41" />
+		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.43" />
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="4.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.31" />
 		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="10.0.31" />
@@ -66,10 +67,10 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
-		<MauiIcon Include="Resources\AppIcon\app_icon_background.svg" ForegroundFile="Resources\AppIcon\app_icon.ios.svg" Color="$(MAUI_ICON_IOS_COLOR)" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appicon.ios.svg" Color="$(MAUI_ICON_IOS_COLOR)" />
 	</ItemGroup>
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
-		<MauiIcon Include="Resources\AppIcon\app_icon_background.svg" ForegroundFile="Resources\AppIcon\app_icon.droid.svg" Color="$(MAUI_ICON_DROID_COLOR)" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appicon.droid.svg" Color="$(MAUI_ICON_DROID_COLOR)" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -90,12 +91,15 @@
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
 	
 		<!-- <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.0.1.4" /> -->
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.10.0.1" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core" Version="2.10.0.1" />
 		<PackageReference Include="Xamarin.AndroidX.Collection" Version="1.5.0.4" />
 		<PackageReference Include="Xamarin.AndroidX.Collection.Ktx" Version="1.5.0.4" />
 		<PackageReference Include="Xamarin.AndroidX.SavedState" Version="1.4.0.1" />
 		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.12.2.1" />
 		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9.1" />
-			
+		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime.Annotation.Jvm" Version="1.10.0.1" ExcludeAssets="all" />
+		<PackageReference Include="Xamarin.AndroidX.Datastore.Preferences.Core.Jvm" Version="1.2.0.1" ExcludeAssets="all" />			
 		<!-- <GoogleServicesJson Include="config\google-services.json" /> -->
 	</ItemGroup>
 

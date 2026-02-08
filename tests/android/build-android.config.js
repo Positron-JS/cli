@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 export default [
     {
-        id: "com.package.name",
+        id: "com.domainname.name",
         name: "Application Name",
 
         url: "https://....",

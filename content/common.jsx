@@ -40,19 +40,19 @@ export const Common = {
     
             <FileSystem.CopyFile
                 src="./res/app-icon-background.svg"
-                dest="./maui/PositronApp/Resources/AppIcon/app_icon_background.svg"
+                dest="./maui/PositronApp/Resources/AppIcon/appicon.svg"
                 overwrite={true}
                 />
     
             <FileSystem.CopyFile
                 src="./res/app-icon.droid.svg"
-                dest="./maui/PositronApp/Resources/AppIcon/app_icon.droid.svg"
+                dest="./maui/PositronApp/Resources/AppIcon/appicon.droid.svg"
                 overwrite={true}
                 />
 
             <FileSystem.CopyFile
                 src="./res/app-icon.ios.svg"
-                dest="./maui/PositronApp/Resources/AppIcon/app_icon.ios.svg"
+                dest="./maui/PositronApp/Resources/AppIcon/appicon.ios.svg"
                 overwrite={true}
                 />
 
