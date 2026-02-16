@@ -1,4 +1,4 @@
-import { Batch, Run } from "@neurospeech/jex/index.js";
+import { Batch, Encryption, Run } from "@neurospeech/jex/index.js";
 import { FileSystem } from "@neurospeech/jex/dist/utils/FileSystem.js";
 import { fileURLToPath } from "url";
 import { readFile, writeFile } from "fs/promises";
@@ -16,7 +16,9 @@ const ReplaceText = async ({ filePath, replace }) => {
 }; 
 
 export const Common = {
-    PreBuild({ env: {
+    PreBuild({
+    passphrase,
+    env: {
         MAUI_ICON_IOS_COLOR = "#FFFFFF",
         MAUI_ICON_DROID_COLOR = "#FFFFFF",
         MAUI_SPLASH_SCREEN_COLOR = "#FFFFFF",
@@ -55,6 +57,13 @@ export const Common = {
                 dest="./maui/PositronApp/Resources/AppIcon/appicon.ios.svg"
                 overwrite={true}
                 />
+
+            <Encryption.Aes256Cbc.Decrypt
+                input="./config/google-services.json.enc"
+                passphrase={passphrase}
+                output="./maui/PositronApp/config/google-services.json"
+                />
+
 
             <FileSystem.CopyFile
                 src="./res/splash.svg"

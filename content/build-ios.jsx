@@ -31,7 +31,9 @@ for (const config of configs) {
         </Batch>}
         >
 
-        <Common.PreBuild/>
+        <Common.PreBuild
+            passphrase={config.passphrase}
+            />
 
         <FileSystem.MergeJson
             json={({

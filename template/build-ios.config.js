@@ -7,6 +7,8 @@ export default [
 
         url: "https://....",
 
+        passphrase: readEnv("PASSPHRASE"),
+
         certPath: "./cert/ios-distribution.p12",
         certPass: readEnv("APPLE_DISTRIBUTION_CERT_PASS"),
         provisioningProfileFile: readEnv("MOBILE_PROVISIONING_PROFILE", "./cert/ios-app.mobileprovision"),

@@ -32,7 +32,9 @@ for(const config of configs) {
             then={(x) => (applicationDisplayVersion = `${x.major}.${x.minor}`, applicationVersion = x.build)}
             />
 
-        <Common.PreBuild />
+        <Common.PreBuild
+            passphrase={config.passphrase}
+            />
 
         <FileSystem.MergeJson
             json={({
