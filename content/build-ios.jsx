@@ -5,6 +5,8 @@ import { Build } from "@neurospeech/jex/dist/ci/build/Build.js";
 import { XCRun } from "@neurospeech/jex/dist/ci/mac/XCRun.js";
 import assert from "assert";
 import { Common } from "./common.jsx";
+import { pathToFileURL } from "url";
+import { resolve } from "path";
 
 const { default: configs } = await import( pathToFileURL( resolve("./build-ios.config.js")));
 
