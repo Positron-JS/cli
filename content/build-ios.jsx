@@ -6,7 +6,7 @@ import { XCRun } from "@neurospeech/jex/dist/ci/mac/XCRun.js";
 import assert from "assert";
 import { Common } from "./common.jsx";
 
-const { default: configs } = await import("../build-ios.config.js");
+const { default: configs } = await import( pathToFileURL( resolve("./build-ios.config.js")));
 
 let applicationDisplayVersion;
 let applicationVersion;
