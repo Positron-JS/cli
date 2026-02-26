@@ -71,12 +71,6 @@ export const Common = {
                 overwrite={true}
                 />
 
-            <FileSystem.CopyFile
-                src="./config/google-services.json"
-                dest="./maui/PositronApp/config/google-services.json"
-                overwrite={true}
-                />
-
             <ReplaceText
                 filePath="./maui/PositronApp/PositronApp.csproj"
                 replace={(text) => {
