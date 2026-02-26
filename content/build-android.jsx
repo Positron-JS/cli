@@ -89,6 +89,7 @@ for(const config of configs) {
             releaseFiles={[`./maui/PositronApp/bin/Release/${config.targetFramework}/publish/*-Signed.aab`]}
             serviceAccountJsonRaw={config.serviceAccountJsonRaw}
             serviceAccountJson={config.serviceAccountJson}
+            changesNotSentForReview={config.changesNotSentForReview ?? false}
             />
 
     </Batch>);
