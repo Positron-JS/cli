@@ -86,7 +86,7 @@ for(const config of configs) {
 
         <PlayStore.Upload
             packageName={config.id}
-            releaseFiles={[`./maui/PositronApp/bin/Release/${config.targetFramework}/publish/*-Signed.apk`]}
+            releaseFiles={[`./maui/PositronApp/bin/Release/${config.targetFramework}/publish/*-Signed.aab`]}
             serviceAccountJsonRaw={config.serviceAccountJsonRaw}
             serviceAccountJson={config.serviceAccountJson}
             />
