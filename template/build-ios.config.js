@@ -7,7 +7,7 @@ export default [
 
         url: "https://....",
 
-        passphrase: readEnv("PASSPHRASE"),
+        passphrase: readEnv("ENC_PASSPHRASE"),
 
         certPath: "./cert/ios-distribution.p12",
         certPass: readEnv("APPLE_DISTRIBUTION_CERT_PASS"),

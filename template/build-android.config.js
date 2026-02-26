@@ -10,7 +10,7 @@ export default [
 
         targetFramework: "net10.0-android",
 
-        passphrase: readEnv("PASSPHRASE"),
+        passphrase: readEnv("ENC_PASSPHRASE"),
 
         androidSdkRoot: readEnv("ANDROID_SDK_ROOT"),
         javaHome: readEnv("JAVA_HOME_21_X64", readEnv("JAVA_HOME")),
