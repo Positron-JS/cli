@@ -1,16 +1,16 @@
 ﻿using Foundation;
-using NativeShell.Platforms;
+using NeuroSpeech.Positron.Platforms;
 
 namespace PositronApp;
 
 [Register("AppDelegate")]
-public class AppDelegate : NativeShellAppDelegate
+public class AppDelegate : PositronAppDelegate
 {
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
     protected override void OnShowEmptyRemoteNotification()
     {
-        
+
     }
 
     protected override void TrackError(Exception ex)
