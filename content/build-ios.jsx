@@ -1,4 +1,4 @@
-import { invoke, Batch, Run} from "@neurospeech/jex/index.js";
+import { invoke, Batch, Run, Encryption} from "@neurospeech/jex/index.js";
 import { FileSystem } from "@neurospeech/jex/dist/utils/FileSystem.js";
 import { AppleDev } from "@neurospeech/jex/dist/ci/mac/AppleDev.js";
 import { Build } from "@neurospeech/jex/dist/ci/build/Build.js";
@@ -7,6 +7,7 @@ import assert from "assert";
 import { Common } from "./common.jsx";
 import { pathToFileURL } from "url";
 import { resolve } from "path";
+import { readFileSync } from "fs";
 
 const { default: configs } = await import( pathToFileURL( resolve("./build-ios.config.js")));
 
@@ -101,6 +102,12 @@ for (const config of configs) {
                 "./maui/PositronApp/PositronApp.csproj"]}
             />
         
+        <Encryption.Aes256Cbc.Decrypt
+            input="./keys/apple-upload-key.p8.enc"
+            output="./keys/apple-upload-key.p8"
+            passphrase={config.passphrase}
+            then={() => config.appStoreConnect.privateKey = readFileSync("./keys/apple-upload-key.p8")}
+            />
 
         <XCRun.UploadApp
             timeout={600000}
