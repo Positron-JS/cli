@@ -106,7 +106,10 @@ for (const config of configs) {
             input="./keys/apple-upload-key.p8.enc"
             output="./keys/apple-upload-key.p8"
             passphrase={config.passphrase}
-            then={() => config.appStoreConnect.privateKey = readFileSync("./keys/apple-upload-key.p8", "utf-8")}
+            then={() => {
+                config.appStoreConnect.privateKey = readFileSync("./keys/apple-upload-key.p8", "utf-8");
+                console.log(`AuthKey loaded successfully`);
+            }}
             />
 
         <XCRun.UploadApp
