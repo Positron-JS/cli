@@ -8,7 +8,7 @@ export default [
 
         url: "https://....",
 
-        targetFramework: "net10.0-android",
+        targetFramework: "net10.0-android36.0",
 
         passphrase: readEnv("ENC_PASSPHRASE"),
 
