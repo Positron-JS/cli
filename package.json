@@ -1,6 +1,6 @@
 {
   "name": "@positron-js/cli",
-  "version": "1.0.43",
+  "version": "1.0.44",
   "description": "Generate Code to create MAUI based Web View App",
   "main": "index.js",
   "type": "module",
