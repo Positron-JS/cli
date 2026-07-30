@@ -63,7 +63,7 @@ for(const config of configs) {
         <Run
             cmd="dotnet"
             timeout={300000}
-            args="restore"
+            args={["restore", "./maui/PositronApp/PositronApp.csproj"]}
             />
         
         <Run
