@@ -9,6 +9,7 @@
         "declarationMap": true,
         "outDir": "dist",
         "rootDir": "./src/",
+        "strict": false,
         "skipDefaultLibCheck": true,
         "skipLibCheck": true,
         "experimentalDecorators": true,
