@@ -60,6 +60,11 @@ for(const config of configs) {
             args="workload install android"
             />
 
+        <Run
+            cmd="dotnet"
+            timeout={300000}
+            args="restore"
+            />
         
         <Run
             cmd="dotnet"
