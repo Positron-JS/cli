@@ -68,7 +68,7 @@ for(const config of configs) {
         
         <Run
             cmd="dotnet"
-            timeout={240000}
+            timeout={600000}
             logData={true}
             args={["publish",
                 "-f", config.targetFramework,
@@ -90,6 +90,7 @@ for(const config of configs) {
             />
 
         <PlayStore.Upload
+            timeout={600000}
             packageName={config.id}
             releaseFiles={[`./maui/PositronApp/bin/Release/${config.targetFramework}/publish/*-Signed.aab`]}
             serviceAccountJsonRaw={config.serviceAccountJsonRaw}
