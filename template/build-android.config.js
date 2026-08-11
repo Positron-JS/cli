@@ -22,6 +22,8 @@ export default [
         serviceAccountJsonRaw: readEnv("PLAYSTORE_SERVICE_ACCOUNT_JSON_TEXT", ""),
         serviceAccountJson: readEnv("PLAYSTORE_SERVICE_ACCOUNT_JSON_FILE", ""),
 
+        uploadApk: false,
+
         /**
          * could be timestamp or patch.
          * timestamp will use current DATE and TIME in Seconds.
