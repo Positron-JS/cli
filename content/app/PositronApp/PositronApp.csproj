@@ -57,7 +57,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.48" />
+		<PackageReference Include="NeuroSpeech.Positron" Version="1.2.53" />
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.90" />
 		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="10.0.31" />
